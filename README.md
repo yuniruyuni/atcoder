@@ -33,4 +33,3 @@ ex: `./submit abc123 a`
 ## limitation
 
 - Currently, it supports only `abc` contest
-- Currently, it cannot download testcases when using `gen`

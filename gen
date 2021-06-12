@@ -4,9 +4,37 @@ contest=$1
 task=$2
 
 project=${contest}-${task}
-
-# TODO: download contest details(especially sample cases) automatically.
+url=https://${contest}.contest.atcoder.jp/tasks/${contest}_${task}
+samples="./test/samples"
 
 git pull origin template:template
 cargo generate --name ${project} --git . --branch template
+
+mkdir -p $samples
+oj download  -d $samples $url
+
+for input in ${samples}/*.in; do
+  name=${input##*/}
+  n=$(echo $name | grep -o -E '[0-9]+')
+
+  output=${input%.*}.out
+  $(cat <<EOS >> ${project}/tests/main.rs
+
+#[test]
+fn sample${n}() {
+    assert_cmd(
+        r#"
+$(cat $input  | sed 's/^/            /')
+        "#,
+        r#"
+$(cat $output | sed 's/^/            /')
+        "#,
+  )
+}
+EOS
+)
+done
+
+rm -rf $samples
+
 nvim -p ${project}/*/main.rs

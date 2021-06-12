@@ -1,2 +1,2 @@
 [workspace]
-members = ["./abc*/"]
+members = ["./practice*/", "./abc*/"]

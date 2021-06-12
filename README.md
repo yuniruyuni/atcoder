@@ -1,5 +1,10 @@
 # atcoder for yuniruyuni
 
+## what is it?
+
+yuniruyuni's atcoder write-ups.
+this repository have some utilities to go at atcoder problems.
+
 ## setup
 
 ```

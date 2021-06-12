@@ -11,33 +11,3 @@ fn assert_cmd(stdin: &str, stdout: &str) {
     assert_eq!(output.stdout_str(), unindent(stdout));
     assert!(output.stderr_str().is_empty());
 }
-
-#[test]
-fn sample1() {
-    assert_cmd(
-        r#"
-        "#,
-        r#"
-        "#
-    );
-}
-
-#[test]
-fn sample2() {
-    assert_cmd(
-        r#"
-        "#,
-        r#"
-        "#
-    );
-}
-
-#[test]
-fn sample3() {
-    assert_cmd(
-        r#"
-        "#,
-        r#"
-        "#
-    );
-}

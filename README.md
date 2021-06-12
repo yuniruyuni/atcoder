@@ -35,6 +35,16 @@ ex: `./gen abc123 a`
 
 ex: `./submit abc123 a`
 
+## test
+
+you can run `cargo test -p <sub-project dir>` in root dir.
+For fast build, it share the crates cache for all sub-project dirs.
+
+ex: `cargo test -p abc152-a`
+
+also you can run all sub-project's testing with `cargo test`.
+it aims to regression testing after drastic (maybe affect to all sub-project) operation.
+
 ## limitation
 
 - Currently, it supports only `abc` contest

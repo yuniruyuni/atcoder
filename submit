@@ -1,0 +1,6 @@
+#!/bin/bash
+
+contest=$1
+task=$2
+
+oj submit https://${contest}.contest.atcoder.jp/tasks/${contest}_${task} ${contest}-${task}/src/main.rs

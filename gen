@@ -1,0 +1,12 @@
+#!/bin/bash
+
+contest=$1
+task=$2
+
+project=${contest}-${task}
+
+# TODO: download contest details(especially sample cases) automatically.
+
+git pull origin template:template
+cargo generate --name ${project} --git . --branch template
+nvim -p ${project}/*/main.rs

@@ -16,10 +16,28 @@ fn assert_cmd(stdin: &str, stdout: &str) {
 fn sample1() {
     assert_cmd(
         r#"
-            <input your sample>
         "#,
         r#"
-            <input your result>
+        "#
+    );
+}
+
+#[test]
+fn sample2() {
+    assert_cmd(
+        r#"
+        "#,
+        r#"
+        "#
+    );
+}
+
+#[test]
+fn sample3() {
+    assert_cmd(
+        r#"
+        "#,
+        r#"
         "#
     );
 }

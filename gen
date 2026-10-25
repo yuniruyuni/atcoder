@@ -9,6 +9,7 @@ samples="./test/samples"
 
 git pull origin template:template
 cargo generate --name ${project} --git . --branch template
+sh ./scripts/secure-template.sh "${project}/Cargo.toml"
 
 mkdir -p $samples
 oj download  -d $samples $url
